@@ -9,11 +9,12 @@ public class DataProcessingService
     {
         var csvLines = new List<string>();
         // CSV-Header
-        csvLines.Add("PARTICIPANT_ID,PROMPT,KEYSTROKE_ID,PRESS_TIME,RELEASE_TIME,LETTER,KEYCODE");
+        csvLines.Add("PARTICIPANT_ID,PROMPT,HIGHLIGHTS,KEYSTROKE_ID,PRESS_TIME,RELEASE_TIME,LETTER,KEYCODE");
 
         foreach (var keystroke in payload.Keystrokes)
         {
-            var line = $"{payload.ParticipantId},{Escape(payload.Prompt)},{keystroke.KeystrokeId},{keystroke.PressTime},{keystroke.ReleaseTime},{Escape(keystroke.Letter)},{keystroke.Keycode}";
+            var highlights = string.Join(";", payload.Highlights.Select(h => $"[{h[0]},{h[1]}]"));
+            var line = $"{payload.ParticipantId},{Escape(payload.Prompt)},\"{highlights}\",{keystroke.KeystrokeId},{keystroke.PressTime},{keystroke.ReleaseTime},{Escape(keystroke.Letter)},{keystroke.Keycode}";
             csvLines.Add(line);
         }
 
