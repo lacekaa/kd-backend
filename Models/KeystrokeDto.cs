@@ -7,4 +7,5 @@ public class KeystrokeDto
     public long ReleaseTime { get; set; }
     public string Letter { get; set; }
     public int Keycode { get; set; }
+    public String Frequency { get; set; }
 }
