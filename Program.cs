@@ -59,7 +59,7 @@ app.UseAuthorization();
 
 // Stelle sicher, dass du die statischen Assets wie gewohnt einbindest
 app.MapStaticAssets();
-
+app.MapGet("/health", () => Results.Ok("OK"));
 app.MapControllerRoute(
         name: "default",
         pattern: "")
