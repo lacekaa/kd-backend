@@ -1,50 +1,37 @@
-﻿# ---- Base runtime image ----
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+﻿# ─── Stage 1: Build & Publish ─────────────────────────────────────────────────────
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 
-# (1) Switch to non‑root user if you have APP_UID set up:
+# 1. Set workdir
+WORKDIR /src
+
+# 2. Copy everything and restore+publish
+COPY . .
+
+# 3. Restore and publish in Release mode to /app/publish
+#    dotnet publish will compile, package, and include all dependencies.
+RUN dotnet publish "kd-backend.csproj" \
+    -c Release \
+    -o /app/publish \
+    /p:UseAppHost=false
+
+# ─── Stage 2: Runtime ───────────────────────────────────────────────────────────────
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
+
+# 4. Run as non-root if you have APP_UID (optional)
 USER $APP_UID
 
 WORKDIR /app
 
-# (2) Expose the ports your app listens on (adjust if needed)
-EXPOSE 8080
-EXPOSE 8081
-
-# (3) Create the DataFiles folder and declare it as a volume
+# 5. Ensure the DataFiles folder exists and declare it a volume
 RUN mkdir -p /app/DataFiles
 VOLUME [ "/app/DataFiles" ]
 
-# ---- Build image ----
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-ARG BUILD_CONFIGURATION=Release
+# 6. Copy the published app from the build image
+COPY --from=build /app/publish ./
 
-WORKDIR /src
+# 7. Expose your HTTP/HTTPS ports
+EXPOSE 8080
+EXPOSE 8081
 
-# copy only csproj and restore first (cache layer)
-COPY ["kd-backend/kd-backend.csproj", "kd-backend/"]
-RUN dotnet restore "kd-backend/kd-backend.csproj"
-
-# copy everything else and build
-COPY . .
-WORKDIR "/src/kd-backend"
-RUN dotnet build "kd-backend.csproj" \
-    -c $BUILD_CONFIGURATION \
-    -o /app/build
-
-# ---- Publish ----
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "kd-backend.csproj" \
-    -c $BUILD_CONFIGURATION \
-    -o /app/publish \
-    /p:UseAppHost=false
-
-# ---- Final image ----
-FROM base AS final
-WORKDIR /app
-
-# copy published output
-COPY --from=publish /app/publish ./
-
+# 8. Launch the app
 ENTRYPOINT ["dotnet", "kd-backend.dll"]
-
