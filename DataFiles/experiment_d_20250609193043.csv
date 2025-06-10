@@ -1,0 +1,23 @@
+PARTICIPANT_ID,EXPERIMENTTYPE,EXPERIMENTATTEMPT,PROMPT,HIGHLIGHTS,UNIMPORTANT,KEYSTROKE_ID,PRESS_TIME,RELEASE_TIME,LETTER,KEYCODE,FREQUENCY
+d,free,1,dddddddddddddddddddddd,"[10,21]","",0,1749490239967,1749490241138,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",1,1749490240481,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",2,1749490240510,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",3,1749490240540,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",4,1749490240571,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",5,1749490240602,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",6,1749490240648,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",7,1749490240678,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",8,1749490240709,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",9,1749490240739,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",10,1749490240771,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",11,1749490240803,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",12,1749490240835,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",13,1749490240865,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",14,1749490240898,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",15,1749490240943,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",16,1749490240973,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",17,1749490241006,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",18,1749490241036,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",19,1749490241066,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",20,1749490241098,0,d,68, Rarely
+d,free,1,dddddddddddddddddddddd,"[10,21]","",21,1749490241129,0,d,68, Rarely

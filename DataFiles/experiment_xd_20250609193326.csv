@@ -1,0 +1,19 @@
+PARTICIPANT_ID,EXPERIMENTTYPE,EXPERIMENTATTEMPT,PROMPT,HIGHLIGHTS,UNIMPORTANT,KEYSTROKE_ID,PRESS_TIME,RELEASE_TIME,LETTER,KEYCODE,FREQUENCY
+xd,free,1,cccccccccccccccccc,"[15,16]","",0,1749490403589,1749490404645,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",1,1749490404098,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",2,1749490404129,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",3,1749490404161,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",4,1749490404192,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",5,1749490404222,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",6,1749490404268,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",7,1749490404299,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",8,1749490404341,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",9,1749490404355,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",10,1749490404401,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",11,1749490404432,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",12,1749490404463,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",13,1749490404495,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",14,1749490404526,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",15,1749490404557,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",16,1749490404588,0,c,67, Never
+xd,free,1,cccccccccccccccccc,"[15,16]","",17,1749490404621,0,c,67, Never

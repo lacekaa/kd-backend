@@ -9,13 +9,13 @@ public class DataProcessingService
     {
         var csvLines = new List<string>();
         // CSV-Header
-        csvLines.Add("PARTICIPANT_ID,PROMPT,HIGHLIGHTS,LOWLIGHTS,KEYSTROKE_ID,PRESS_TIME,RELEASE_TIME,LETTER,KEYCODE,FREQUENCY");
+        csvLines.Add("PARTICIPANT_ID,EXPERIMENTTYPE,EXPERIMENTATTEMPT,PROMPT,HIGHLIGHTS,UNIMPORTANT,KEYSTROKE_ID,PRESS_TIME,RELEASE_TIME,LETTER,KEYCODE,FREQUENCY");
 
         foreach (var keystroke in payload.Keystrokes)
         {
             var highlights = string.Join(";", payload.Highlights.Select(h => $"[{h[0]},{h[1]}]"));
             var lowlights = string.Join(";", payload.Lowlights.Select(h => $"[{h[0]},{h[1]}]"));
-            var line = $"{payload.ParticipantId},{Escape(payload.Prompt)},\"{highlights}\",\"{lowlights}\",{keystroke.KeystrokeId},{keystroke.PressTime},{keystroke.ReleaseTime},{Escape(keystroke.Letter)},{keystroke.Keycode}, {keystroke.Frequency}";
+            var line = $"{payload.ParticipantId},{payload.ExperimentType},{payload.ExperimentAttempt},{Escape(payload.Prompt)},\"{highlights}\",\"{lowlights}\",{keystroke.KeystrokeId},{keystroke.PressTime},{keystroke.ReleaseTime},{Escape(keystroke.Letter)},{keystroke.Keycode}, {keystroke.Frequency}";
             csvLines.Add(line);
         }
 
