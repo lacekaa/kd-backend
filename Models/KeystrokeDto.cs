@@ -8,4 +8,5 @@ public class KeystrokeDto
     public string Letter { get; set; }
     public int Keycode { get; set; }
     public String Frequency { get; set; }
+    public int LatinSquareType{ get; set; }
 }
